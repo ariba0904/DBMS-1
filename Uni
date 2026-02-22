@@ -1,0 +1,36 @@
+-- Delete table if already exists
+DROP TABLE students;
+
+-- Create students table
+CREATE TABLE students (
+    student_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100) NOT NULL,
+    section VARCHAR2(10) NOT NULL,
+    department VARCHAR2(50) NOT NULL,
+    semester NUMBER(2),
+    cgpa NUMBER(3,2),
+    email VARCHAR2(100) UNIQUE,
+    phone VARCHAR2(15)
+);
+
+-- Insert data
+INSERT INTO students VALUES
+(101, 'Ariba', 'A', 'CSE', 3, 3.85, 'ariba@gmail.com', '01700000001');
+
+INSERT INTO students VALUES
+(102, 'Zakia', 'B', 'CSE', 3, 3.70, 'zakia@gmail.com', '01700000002');
+
+INSERT INTO students VALUES
+(103, 'Jeni', 'A', 'EEE', 2, 3.60, 'jeni@gmail.com', '01700000003');
+
+INSERT INTO students VALUES
+(104, 'Maliha', 'B', 'BBA', 4, 3.90, 'maliha@gmail.com', '01700000004');
+
+INSERT INTO students VALUES
+(105, 'Soha', 'A', 'CSE', 1, 3.75, 'soha@gmail.com', '01700000005');
+
+-- Save changes
+COMMIT;
+
+-- Show all data
+SELECT * FROM students;
